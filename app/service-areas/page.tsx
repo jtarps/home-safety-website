@@ -54,9 +54,9 @@ export default function ServiceAreasPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Service Areas
             </h1>
-            <p className="text-xl mb-8 opacity-90">
-              Jay's brings fast, flat-rate home-safety installations to the GTA.
-              See if we serve your neighborhood.
+            <p className="text-xl text-white-600 mb-8 max-w-3xl mx-auto">
+              Brothers brings fast, flat-rate home-safety installations to the
+              GTA.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -72,10 +72,7 @@ export default function ServiceAreasPage() {
                 className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
                 asChild
               >
-                <Link href="tel:1-800-SAFE-HOME">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Now
-                </Link>
+                <Link href="tel:+16473710899">(647) 371-0899</Link>
               </Button>
             </div>
           </div>
@@ -115,7 +112,7 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      {/* Service Details */}
+      {/* Service Details
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -194,7 +191,7 @@ export default function ServiceAreasPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 bg-blue-600 text-white">
@@ -217,10 +214,7 @@ export default function ServiceAreasPage() {
               className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               asChild
             >
-              <Link href="tel:1-800-SAFE-HOME">
-                <Phone className="mr-2 h-5 w-5" />
-                Call 1‑800‑SAFE-HOME
-              </Link>
+              <Link href="tel:+16473710899">Call (647) 371-0899</Link>
             </Button>
           </div>
         </div>

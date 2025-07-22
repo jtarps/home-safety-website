@@ -21,78 +21,82 @@ import { useState } from "react";
 
 const services = [
   {
-    id: "grab-bar",
-    title: "Grab Bar Install",
-    price: "$89",
+    id: "grab-bars",
+    title: "Grab Bars",
     description:
-      "Secure one 24\u2033 grab bar in wall studs\u2014perfect for tubs or hallways.",
-    icon: Grid3X3,
-    features: [
-      "All hardware included",
-      "Professional installation",
-      "1-year warranty",
-    ],
+      "Secure support in bathrooms, stairways, hallways, and entryways. Choose from straight, angled, flip-up, or portable styles for every need.",
   },
   {
-    id: "stair-railing",
-    title: "Stair Railing Install",
-    price: "$349",
+    id: "stair-rails",
+    title: "Stair Rails Installation",
     description:
-      "Install one straight railing (up to 6 ft) for safe, confident steps.",
-    icon: Stairs,
-    features: ["Custom fit", "Sturdy handrail", "Secure mounting"],
+      "Sturdy handrails for safe, confident steps—custom fit for any staircase, indoors or out.",
   },
   {
-    id: "straight-ramp",
-    title: "Straight Ramp Install",
-    price: "$125 / ft",
+    id: "safety-ramps",
+    title: "Safety Ramps (Interior & Exterior)",
     description:
-      "Set modular ramp segments (up to 6 ft) with handrail for easy access.",
-    icon: Grid3X3,
-    features: ["Aluminum ramp", "Handrail included", "Non-slip surface"],
+      "Barrier-free access with portable, modular, or custom-built ramps. OBC-compliant for safety and ease.",
   },
   {
-    id: "safety-rail-kit",
-    title: "Safety Rail Kit Install",
-    price: "$549",
+    id: "bathroom-safety-rails",
+    title: "Bathroom Safety Rails",
     description:
-      "Fit up to 8 ft of deck or porch rail posts + mid-rail\u2014sturdy & code-ready.",
-    icon: Grid3X3,
-    features: ["Deck/porch ready", "Code-compliant", "All hardware included"],
+      "Strategically placed rails for safe transfers and stability around tubs, toilets, and showers.",
   },
   {
-    id: "bathroom-safety-rail",
-    title: "Bathroom Safety Rail Install",
-    price: "$199",
-    description: "Mount up to 3 rails around tub or toilet for added support.",
-    icon: ShoppingCart,
-    features: ["Up to 3 rails", "Custom placement", "Secure mounting"],
-  },
-  {
-    id: "handheld-shower",
-    title: "Hand-Held Shower Install",
-    price: "$149",
+    id: "shower-chair-setup",
+    title: "Shower Chair Setup",
     description:
-      "Install slide-bar, hose & handheld sprayer\u2014ideal for seated showers.",
-    icon: Bed,
-    features: ["Slide-bar included", "Flexible hose", "Easy to use"],
+      "Professional assembly and placement of shower chairs for safe, comfortable bathing.",
   },
   {
-    id: "auto-door-opener",
-    title: "Automatic Door Opener Install",
-    price: "Custom Quote",
-    description: "Mount & wire one door operator for touch-free entry.",
-    icon: Stairs,
-    features: ["Touch-free entry", "Professional wiring", "Custom fit"],
-  },
-  {
-    id: "bath-surround",
-    title: "Bath Surround (Bath Fitter) Install",
-    price: "Custom Quote",
+    id: "handheld-shower-head",
+    title: "Handheld Shower Head Installation",
     description:
-      "Install custom acrylic tub surround\u2014no-tear remodel in one visit.",
-    icon: ShoppingCart,
-    features: ["Acrylic surround", "One-day install", "No demolition"],
+      "Flexible, easy-to-use shower heads for seated or standing use—improving independence and comfort.",
+  },
+  {
+    id: "stairlift-installation",
+    title: "Stairlift (Chair Lift) Installation",
+    description:
+      "Straight, curved, or outdoor stairlifts for safe, effortless travel up and down stairs.",
+  },
+  {
+    id: "accessible-bathroom-mods",
+    title: "Accessible Bathroom Modifications",
+    description:
+      "Roll-in showers, walk-in tubs, raised toilets, and more—customized for your needs.",
+  },
+  {
+    id: "automatic-door-opener",
+    title: "Automatic Door Opener Installation",
+    description:
+      "Touch-free entry for true accessibility. Professional installation for homes and buildings.",
+  },
+  {
+    id: "doorway-widening",
+    title: "Doorway Widening",
+    description:
+      "Expand doorways for wheelchair and walker access—seamless, code-compliant modifications.",
+  },
+  {
+    id: "threshold-ramps",
+    title: "Threshold Ramps/Reducers",
+    description:
+      "Eliminate trip hazards at doorways and flooring transitions with custom-fit ramps and reducers.",
+  },
+  {
+    id: "handrails-support-rails",
+    title: "Handrails & Support Rails",
+    description:
+      "Sturdy handrails and support rails for stairs, hallways, and high-traffic areas—installed to code.",
+  },
+  {
+    id: "flooring-assessment",
+    title: "Flooring Assessment & Modification",
+    description:
+      "Expert recommendations and installation of non-slip, low-pile flooring for maximum safety.",
   },
 ];
 
@@ -102,12 +106,12 @@ export function ServicesSection() {
     <section id="services" className="py-12 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Flat-Rate Safety Installs You Can Count On
+          <h2 className="text-3xl font-bold text-gray-700 mb-4">
+            Professional Safety Installations at Flat Rates
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Professional home safety installations with transparent pricing and
-            expert service
+            No surprises, no hidden fees—just expert installations that make
+            your home safer today
           </p>
         </div>
 
@@ -120,7 +124,35 @@ export function ServicesSection() {
               {/* Image Section */}
               <div className="md:w-1/2 flex items-center justify-center bg-blue-50">
                 <img
-                  src="/placeholder.jpg"
+                  src={
+                    service.id === "grab-bars"
+                      ? "/grabbarinstall.png"
+                      : service.id === "stair-rails"
+                      ? "/stairrailings.png"
+                      : service.id === "safety-ramps"
+                      ? "/safetyramps.png"
+                      : service.id === "bathroom-safety-rails"
+                      ? "/bathroomsafety.png"
+                      : service.id === "shower-chair-setup"
+                      ? "/showerchair.png"
+                      : service.id === "handheld-shower-head"
+                      ? "/handheldshower.png"
+                      : service.id === "stairlift-installation"
+                      ? "/stairlift.png"
+                      : service.id === "accessible-bathroom-mods"
+                      ? "/accessiblebathroom.png"
+                      : service.id === "automatic-door-opener"
+                      ? "/automaticdoor.png"
+                      : service.id === "doorway-widening"
+                      ? "/doorwaywidening.png"
+                      : service.id === "threshold-ramps"
+                      ? "/thresholdramps.png"
+                      : service.id === "handrails-support-rails"
+                      ? "/handrails.png"
+                      : service.id === "flooring-assessment"
+                      ? "/flooringassessment.png"
+                      : "/placeholder.jpg"
+                  }
                   alt={`${service.title} installation service`}
                   className="object-cover w-full h-56 md:h-full rounded-t-2xl md:rounded-l-2xl md:rounded-t-none"
                 />
@@ -128,8 +160,13 @@ export function ServicesSection() {
               {/* Text Section */}
               <div className="flex-1 p-6 flex flex-col justify-center">
                 <h3
-                  className="text-2xl font-extrabold uppercase mb-2 tracking-wide"
-                  style={{ color: "#dd6e18" }}
+                  className="text-2xl font-extrabold mb-2 tracking-wide break-words leading-tight"
+                  style={{
+                    color: "#dd6e18",
+                    wordBreak: "break-word",
+                    whiteSpace: "normal",
+                  }}
+                  title={service.title}
                 >
                   {service.title}
                 </h3>
@@ -140,13 +177,16 @@ export function ServicesSection() {
                   className="list-disc list-inside mb-6"
                   style={{ color: "#183f64" }}
                 >
-                  {service.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
+                  {/* Features removed as per new_code */}
                 </ul>
                 <Button
                   asChild
-                  className="px-8 py-3 rounded-xl font-extrabold text-lg transition shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 mt-2"
+                  className={
+                    service.id === "threshold-ramps" ||
+                    service.id === "accessible-bathroom-mods"
+                      ? "px-8 py-3 rounded-xl font-extrabold text-lg transition shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 mt-2 w-full max-w-full truncate"
+                      : "px-8 py-3 rounded-xl font-extrabold text-lg transition shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 mt-2"
+                  }
                   style={{
                     backgroundColor: "#dd6e18",
                     color: "#fff",
@@ -155,10 +195,18 @@ export function ServicesSection() {
                 >
                   <Link
                     href={`/booking?service=${service.id}`}
-                    className="flex items-center justify-center gap-2 no-underline"
+                    className={
+                      service.id === "threshold-ramps" ||
+                      service.id === "accessible-bathroom-mods"
+                        ? "flex items-center justify-center gap-2 no-underline w-full max-w-full truncate"
+                        : "flex items-center justify-center gap-2 no-underline"
+                    }
                   >
                     Check Availability
-                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    <ArrowRight
+                      className="w-4 h-4 flex-shrink-0"
+                      aria-hidden="true"
+                    />
                   </Link>
                 </Button>
               </div>

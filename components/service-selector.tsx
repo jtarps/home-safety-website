@@ -8,6 +8,11 @@ import {
   Bed,
   StepBackIcon as Stairs,
   ClipboardCheck,
+  DoorOpen,
+  ShowerHead,
+  Wrench,
+  Home,
+  Accessibility,
 } from "lucide-react";
 
 interface Service {
@@ -30,67 +35,110 @@ export function ServiceSelector({
 }: ServiceSelectorProps) {
   const services: Service[] = [
     {
-      id: "grab-bar",
-      title: "Grab Bar Install",
+      id: "grab-bars",
+      title: "Grab Bars Installation",
       price: "$89",
       description:
-        "Secure one 24\u2033 grab bar in wall studs\u2014perfect for tubs or hallways.",
+        "Secure support in bathrooms, stairways, hallways, and entryways. Professional installation with warranty.",
       icon: Grip,
+      popular: true,
     },
     {
-      id: "stair-railing",
-      title: "Stair Railing Install",
+      id: "stair-railings",
+      title: "Stair Railings Installation",
       price: "$349",
       description:
-        "Install one straight railing (up to 6 ft) for safe, confident steps.",
+        "Safe, stylish stair railings for every home. Custom fit for any staircase, indoors or out.",
       icon: Stairs,
     },
     {
-      id: "straight-ramp",
-      title: "Straight Ramp Install",
+      id: "wheelchair-ramps",
+      title: "Wheelchair Ramps",
       price: "$125 / ft",
       description:
-        "Set modular ramp segments (up to 6 ft) with handrail for easy access.",
-      icon: Grip,
+        "Safe, reliable wheelchair ramps for every entrance. Modular, custom, or portable options available.",
+      icon: Accessibility,
     },
     {
-      id: "safety-rail-kit",
-      title: "Safety Rail Kit Install",
-      price: "$549",
-      description:
-        "Fit up to 8 ft of deck or porch rail posts + mid-rail\u2014sturdy & code-ready.",
-      icon: Grip,
-    },
-    {
-      id: "bathroom-safety-rail",
-      title: "Bathroom Safety Rail Install",
+      id: "bathroom-safety",
+      title: "Bathroom Safety Modifications",
       price: "$199",
       description:
-        "Mount up to 3 rails around tub or toilet for added support.",
+        "Safe, comfortable, and accessible bathrooms. Grab bars, accessible showers, and more for peace of mind.",
       icon: Bath,
+      popular: true,
     },
     {
-      id: "handheld-shower",
-      title: "Hand-Held Shower Install",
+      id: "automatic-door-opener",
+      title: "Automatic Door Opener Installation",
+      price: "Custom Quote",
+      description:
+        "Touch-free entry for true accessibility. Professional installation for homes and buildings.",
+      icon: DoorOpen,
+    },
+    {
+      id: "doorway-widening",
+      title: "Doorway Widening",
+      price: "Custom Quote",
+      description:
+        "Expand doorways for wheelchair and walker access—seamless, code-compliant modifications.",
+      icon: DoorOpen,
+    },
+    {
+      id: "threshold-ramps-reducers",
+      title: "Threshold Ramps & Reducers",
+      price: "$150",
+      description:
+        "Eliminate trip hazards at doorways and flooring transitions with custom-fit solutions.",
+      icon: Accessibility,
+    },
+    {
+      id: "handrails-support-rails",
+      title: "Handrails & Support Rails",
+      price: "$249",
+      description:
+        "Sturdy handrails and support rails for stairs, hallways, and high-traffic areas.",
+      icon: Grip,
+    },
+    {
+      id: "shower-chair-setup",
+      title: "Shower Chair Setup",
       price: "$149",
       description:
-        "Install slide-bar, hose & handheld sprayer\u2014ideal for seated showers.",
-      icon: Bed,
+        "Professional assembly and placement of shower chairs for safe, comfortable bathing.",
+      icon: ShowerHead,
     },
     {
-      id: "auto-door-opener",
-      title: "Automatic Door Opener Install",
+      id: "handheld-shower-head",
+      title: "Handheld Shower Head Installation",
+      price: "$149",
+      description:
+        "Flexible, easy-to-use shower heads for seated or standing use—improving independence.",
+      icon: ShowerHead,
+    },
+    {
+      id: "stairlift-installation",
+      title: "Stairlift (Chair Lift) Installation",
       price: "Custom Quote",
-      description: "Mount & wire one door operator for touch-free entry.",
+      description:
+        "Straight, curved, or outdoor stairlifts for safe, effortless travel up and down stairs.",
       icon: Stairs,
     },
     {
-      id: "bath-surround",
-      title: "Bath Surround (Bath Fitter) Install",
+      id: "accessible-bathroom-mods",
+      title: "Accessible Bathroom Modifications",
       price: "Custom Quote",
       description:
-        "Install custom acrylic tub surround\u2014no-tear remodel in one visit.",
+        "Roll-in showers, walk-in tubs, raised toilets, and more—customized for your needs.",
       icon: Bath,
+    },
+    {
+      id: "safety-assessment",
+      title: "Home Safety Assessment",
+      price: "Free",
+      description:
+        "Professional assessment of your home's safety needs with personalized recommendations.",
+      icon: ClipboardCheck,
     },
   ];
 
@@ -111,22 +159,36 @@ export function ServiceSelector({
   const getTotalEstimate = () => {
     let total = 0;
     let hasCustomQuote = false;
+    let hasFreeService = false;
+
     selectedServices.forEach((service) => {
       if (service.includes("Custom Quote")) {
         hasCustomQuote = true;
-      }
-      const priceMatch = service.match(/\$(\d+)/);
-      if (priceMatch) {
-        total += Number.parseInt(priceMatch[1]);
+      } else if (service.includes("Free")) {
+        hasFreeService = true;
+      } else {
+        const priceMatch = service.match(/\$(\d+)/);
+        if (priceMatch) {
+          total += Number.parseInt(priceMatch[1]);
+        }
+        // Handle per-foot pricing
+        const perFootMatch = service.match(/\$(\d+)\s*\/\s*ft/);
+        if (perFootMatch) {
+          // Estimate 6 feet for per-foot services
+          total += Number.parseInt(perFootMatch[1]) * 6;
+        }
       }
     });
-    if (hasCustomQuote) return "We’ll call with a quote";
+
+    if (hasCustomQuote) return "We'll call with a quote";
+    if (hasFreeService && total === 0) return "Free Assessment";
+    if (hasFreeService && total > 0) return `$${total} (Assessment Free)`;
     return total > 0 ? `$${total}` : "";
   };
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {services.map((service) => {
           const serviceString = `${service.title} (${service.price})`;
           const isSelected = selectedServices.includes(serviceString);
@@ -161,13 +223,10 @@ export function ServiceSelector({
                       </span>
                       {service.popular && (
                         <Badge className="bg-blue-600 text-white">
-                          Most Popular
+                          Popular
                         </Badge>
                       )}
                     </div>
-                    <p className="text-sm text-gray-600">
-                      {service.description}
-                    </p>
                   </div>
                 </div>
               </CardContent>

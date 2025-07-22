@@ -16,14 +16,13 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <img
-              src="/logo-main.svg"
-              alt="Jay's Home Safety Solutions Logo"
-              className="h-12 w-auto max-w-[180px] object-contain mb-4"
-              style={{ background: "transparent" }}
+              src="/brotherslogo.svg"
+              alt="Brothers Home Safety Solutions Logo"
+              className="h-12 w-auto object-contain"
             />
-            <h3 className="text-xl font-bold mb-4" style={{ color: "#dd6e18" }}>
-              Jay's Home Safety Solutions
-            </h3>
+            <span className="text-lg font-semibold text-gray-900">
+              Brothers Home Safety Solutions
+            </span>
             <p className="text-gray-300 mb-4">
               Making homes safer and more accessible for over 15 years.
               Professional installation, guaranteed results.
@@ -32,11 +31,11 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 <Link
-                  href="tel:1-800-SAFE-HOME"
+                  href="tel:+16473710899"
                   className="hover:underline transition-colors hover:text-orange-300"
-                  aria-label="Call 1-800-SAFE-HOME"
+                  aria-label="Call (647) 371-0899"
                 >
-                  1-800-SAFE-HOME
+                  (647) 371-0899
                 </Link>
               </div>
               <div className="flex items-center gap-2">
@@ -231,10 +230,10 @@ export function Footer() {
                 24/7 emergency installations available
               </p>
               <Link
-                href="tel:1-800-SAFE-HOME"
+                href="tel:+16473710899"
                 className="text-white font-semibold hover:text-orange-300 transition-colors"
               >
-                Call Now: 1-800-SAFE-HOME
+                Call Now: (647) 371-0899
               </Link>
             </div>
           </div>
@@ -243,9 +242,9 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Jay's Home Safety Solutions. All
-              rights reserved. Licensed, Bonded & Insured.
+            <div className="text-center text-gray-400 text-sm">
+              © {new Date().getFullYear()} Brothers Home Safety Solutions. All
+              rights reserved.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
@@ -268,6 +267,14 @@ export function Footer() {
               </Link>
             </div>
           </div>
+        </div>
+        <div className="flex flex-col items-center gap-2 mt-8">
+          <span className="flex items-center gap-1 bg-white/20 rounded-full px-3 py-1 font-semibold text-white-700 text-xl">
+            <span role="img" aria-label="Canadian flag">
+              🇨🇦
+            </span>{" "}
+            Proudly Canadian
+          </span>
         </div>
       </div>
     </footer>

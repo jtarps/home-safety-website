@@ -8,6 +8,8 @@ import {
   Lightbulb,
   DoorOpen,
   StepBackIcon as Stairs,
+  Shield,
+  Wrench,
 } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/header";
@@ -23,11 +25,12 @@ export default function HomeModificationsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Safe, Flat-Rate Home Modifications
+              Accessible Bathroom & Home Modifications
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Doorway widening, ramps, lighting &amp; more—one visit, no
-              surprises.
+              Roll-in showers, walk-in tubs, doorway widening, ramps, and
+              more—customized for your needs, with flat-rate, professional
+              installation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -43,10 +46,7 @@ export default function HomeModificationsPage() {
                 className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
                 asChild
               >
-                <Link href="tel:1-800-SAFE-HOME">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Now
-                </Link>
+                <Link href="tel:+16473710899">(647) 371-0899</Link>
               </Button>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function HomeModificationsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Home Modification Services
+              Accessible Bathroom & Home Modification Services
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card>
@@ -133,16 +133,17 @@ export default function HomeModificationsPage() {
                 <CardContent className="p-6">
                   <Home className="h-12 w-12 text-blue-600 mb-4" />
                   <h3 className="text-xl font-semibold mb-3">
-                    Kitchen Modifications
+                    Accessible Bathroom Modifications
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Accessible kitchen features including lowered counters,
-                    pull-out shelves, and easy-reach storage.
+                    Roll-in showers, walk-in tubs, raised toilets, grab bars,
+                    and non-slip flooring for safe, independent bathing.
                   </p>
                   <ul className="text-sm space-y-1">
-                    <li>• Lowered counter sections</li>
-                    <li>• Pull-out cabinet shelves</li>
-                    <li>• Accessible appliance placement</li>
+                    <li>• Roll-in shower installation</li>
+                    <li>• Walk-in tub installation</li>
+                    <li>• Raised toilet and grab bar installation</li>
+                    <li>• Non-slip flooring and threshold reducers</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -405,12 +406,48 @@ export default function HomeModificationsPage() {
       </Section>
       */}
 
+      {/* Why Choose Us Section */}
+      <Section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl font-bold mb-6 text-center text-blue-900">
+            Why Choose Brothers for Accessible Modifications?
+          </h2>
+          <ul className="grid md:grid-cols-2 gap-8 text-lg text-gray-700">
+            <li className="flex items-start gap-2">
+              <Shield className="w-6 h-6 text-blue-600 mt-1" />{" "}
+              OBC/ADA-compliant for safety and accessibility
+            </li>
+            <li className="flex items-start gap-2">
+              <Wrench className="w-6 h-6 text-blue-600 mt-1" /> Installed by
+              licensed, insured professionals
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="w-6 h-6 text-green-600 mt-1" /> Custom fit
+              for your home and needs
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="w-6 h-6 text-green-600 mt-1" /> Fast,
+              clean installs—minimal disruption
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="w-6 h-6 text-green-600 mt-1" /> 1-year
+              workmanship warranty
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle className="w-6 h-6 text-green-600 mt-1" /> Wide range
+              of modification types and finishes
+            </li>
+          </ul>
+        </div>
+      </Section>
+
       {/* CTA Section */}
       <Section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Safer Living?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Schedule your free home safety assessment today.
+            Book your accessible bathroom or home modification today and enjoy
+            safety, comfort, and independence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -418,7 +455,7 @@ export default function HomeModificationsPage() {
               className="bg-white text-blue-600 hover:bg-gray-100"
               asChild
             >
-              <Link href="/booking">Get Free Assessment</Link>
+              <Link href="/booking">Book Your Modification</Link>
             </Button>
             <Button
               size="lg"
@@ -426,10 +463,7 @@ export default function HomeModificationsPage() {
               className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               asChild
             >
-              <Link href="tel:1-800-SAFE-HOME">
-                <Phone className="mr-2 h-5 w-5" />
-                Call 1‑800‑SAFE-HOME
-              </Link>
+              <Link href="tel:+16473710899">Call (647) 371-0899</Link>
             </Button>
           </div>
         </div>

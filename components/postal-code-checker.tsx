@@ -250,7 +250,7 @@ export function PostalCodeChecker() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       <div className="text-center mb-4">
         {/* <h3 className="text-lg font-semibold text-gray-900 flex items-center justify-center gap-2">
           <MapPin className="w-5 h-5 text-blue-600" />
@@ -263,7 +263,7 @@ export function PostalCodeChecker() {
       {result === null && (
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 items-center bg-white/80 rounded-xl shadow-sm px-4 py-3 border border-blue-100"
+          className="flex flex-col sm:flex-row gap-3 items-center bg-white/80 rounded-xl shadow-sm px-6 py-4 border border-blue-100"
           role="search"
           aria-label="Check service availability by postal code"
         >
@@ -272,7 +272,7 @@ export function PostalCodeChecker() {
             placeholder="Enter your postal code"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
-            className="flex-1 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-lg py-3 px-4 rounded-md"
+            className="flex-1 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-lg py-4 px-6 rounded-md"
             maxLength={7}
             aria-label="Postal code"
             aria-describedby="postal-code-help"
@@ -286,7 +286,7 @@ export function PostalCodeChecker() {
             type="submit"
             disabled={!postalCode.trim() || isChecking}
             style={{ backgroundColor: "#dd6e18", color: "white" }}
-            className="hover:bg-orange-700 text-white px-8 py-3 text-lg rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-colors duration-200"
+            className="hover:bg-orange-700 text-white px-10 py-4 text-lg rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-colors duration-200"
             aria-label={
               isChecking
                 ? "Checking availability..."

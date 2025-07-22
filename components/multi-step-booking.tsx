@@ -36,7 +36,12 @@ import { ServiceSelector } from "@/components/service-selector";
 import { CalendarIntegration } from "@/components/calendar-integration";
 import Link from "next/link";
 
-type BookingStep = "availability" | "appointment" | "details" | "confirmation";
+type BookingStep =
+  | "availability"
+  | "services"
+  | "appointment"
+  | "details"
+  | "confirmation";
 
 interface BookingResult {
   success: boolean;
@@ -139,7 +144,7 @@ export function MultiStepBooking() {
       setPostalCode(result.postalCode);
 
       if (result.available) {
-        setCurrentStep("appointment");
+        setCurrentStep("services");
       } else {
         setErrors({
           postalCode: "Sorry, we don't currently service this area.",
@@ -181,6 +186,18 @@ export function MultiStepBooking() {
       }));
     } finally {
       setIsValidatingReferral(false);
+    }
+  };
+
+  const proceedToAppointment = () => {
+    if (formData.services.length > 0) {
+      setCurrentStep("appointment");
+      setErrors({});
+    } else {
+      setErrors((prev) => ({
+        ...prev,
+        services: "Please select at least one service",
+      }));
     }
   };
 
@@ -267,6 +284,13 @@ export function MultiStepBooking() {
 
   const getStepStatus = (step: BookingStep) => {
     if (step === "availability" && isAvailable) return "completed";
+    if (
+      step === "services" &&
+      (currentStep === "appointment" ||
+        currentStep === "details" ||
+        currentStep === "confirmation")
+    )
+      return "completed";
     if (
       step === "appointment" &&
       (currentStep === "details" || currentStep === "confirmation")
@@ -474,10 +498,10 @@ export function MultiStepBooking() {
               <p className="text-gray-600 mb-4">
                 Need help? Call{" "}
                 <a
-                  href="tel:1-800-SAFE-HOME"
+                  href="tel:+16473710899"
                   className="font-semibold text-blue-600"
                 >
-                  1-800-SAFE-HOME
+                  (647) 371-0899
                 </a>
               </p>
               <Button
@@ -502,11 +526,11 @@ export function MultiStepBooking() {
           <strong>Important:</strong> Your session will expire in 15 minutes.
           Please complete your booking or contact us at{" "}
           <Link
-            href="tel:1-800-SAFE-HOME"
+            href="tel:+16473710899"
             className="font-semibold hover:underline transition-colors"
-            aria-label="Call 1-800-SAFE-HOME"
+            aria-label="Call (647) 371-0899"
           >
-            1-800-SAFE-HOME
+            (647) 371-0899
           </Link>
           .
         </div>
@@ -559,9 +583,39 @@ export function MultiStepBooking() {
         )}
       </Card>
 
-      {/* Step 2: Choose Appointment */}
+      {/* Step 2: Select Services */}
       <Card>
-        <StepHeader step="appointment" number={2} title="Select Date & Time" />
+        <StepHeader step="services" number={2} title="Select Services" />
+        {currentStep === "services" && (
+          <CardContent className="p-6">
+            <div className="space-y-4">
+              <Label>What services do you need? *</Label>
+              <div className="mt-2">
+                <ServiceSelector
+                  selectedServices={formData.services}
+                  onChange={(services) =>
+                    setFormData((prev) => ({ ...prev, services }))
+                  }
+                />
+                {errors.services && (
+                  <p className="text-red-600 text-sm mt-1">{errors.services}</p>
+                )}
+              </div>
+              <Button
+                onClick={proceedToAppointment}
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3"
+                size="lg"
+              >
+                Next: Select Date & Time →
+              </Button>
+            </div>
+          </CardContent>
+        )}
+      </Card>
+
+      {/* Step 3: Choose Appointment */}
+      <Card>
+        <StepHeader step="appointment" number={3} title="Select Date & Time" />
         {currentStep === "appointment" && (
           <CardContent className="p-6">
             <div className="space-y-4">
@@ -621,9 +675,9 @@ export function MultiStepBooking() {
         )}
       </Card>
 
-      {/* Step 3: Enter Service Details */}
+      {/* Step 4: Enter Service Details */}
       <Card>
-        <StepHeader step="details" number={3} title="Your Info & Services" />
+        <StepHeader step="details" number={4} title="Your Info" />
         {currentStep === "details" && (
           <CardContent className="p-6">
             <div className="space-y-6">
@@ -715,24 +769,6 @@ export function MultiStepBooking() {
                 {errors.address && (
                   <p className="text-red-600 text-sm mt-1">{errors.address}</p>
                 )}
-              </div>
-
-              {/* Service Selection */}
-              <div>
-                <Label>What services do you need? *</Label>
-                <div className="mt-2">
-                  <ServiceSelector
-                    selectedServices={formData.services}
-                    onChange={(services) =>
-                      setFormData((prev) => ({ ...prev, services }))
-                    }
-                  />
-                  {errors.services && (
-                    <p className="text-red-600 text-sm mt-1">
-                      {errors.services}
-                    </p>
-                  )}
-                </div>
               </div>
 
               {/* Referral Information */}

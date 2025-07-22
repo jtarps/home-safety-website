@@ -9,14 +9,14 @@ import {
 
 const faqs = [
   {
-    question: "What services does Jay's offer?",
+    question: "What services does Brothers offer?",
     answer:
-      "Grab bars, handrails, stairlifts, ramps, and full home-safety assessments—all at flat rates.",
+      "We offer a comprehensive range of home safety installations including grab bars, stair railings, wheelchair ramps, bathroom safety rails, automatic door openers, and more. All installations are done by certified professionals with transparent, flat-rate pricing.",
   },
   {
     question: "How do I schedule my installation?",
     answer:
-      "Enter your postal code online, pick a date & time, then complete the form or call us at 1‑800‑SAFE-HOME.",
+      "Enter your postal code online, pick a date & time, then complete the form or call us at (647) 371-0899.",
   },
   {
     question: "Are consultations and quotes free?",
@@ -55,9 +55,9 @@ export default function FAQPage() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-blue-100">
       <Header />
       <main className="flex-1 flex items-center justify-center py-16 px-4">
-        <div className="w-full max-w-2xl mx-auto">
-          <h1 className="text-4xl font-bold mb-6 text-center text-blue-900 drop-shadow-sm">
-            Jay's FAQs
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Brothers FAQs
           </h1>
           <p className="text-lg text-gray-600 mb-10 text-center">
             Find quick answers about our flat-rate safety installs, booking

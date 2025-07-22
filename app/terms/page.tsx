@@ -7,17 +7,15 @@ export default function TermsPage() {
       <main className="flex-1 max-w-2xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
         <p className="mb-4 text-gray-700">
-          Welcome to Jay's. By accessing or using our website and services, you
-          agree to be bound by the following Terms of Service. Please read them
-          carefully.
+          Welcome to Brothers. By accessing or using our website and services,
+          you agree to be bound by these Terms of Service.
         </p>
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">1. Services</h2>
         <p className="mb-4 text-gray-700">
-          Jay's provides home-safety installation services, including grab bars,
-          handrails, stairlifts, and related accessibility upgrades. All
-          services are subject to availability and your acceptance of these
-          terms.
+          Brothers provides home-safety installation services, including grab
+          bars, stair railings, wheelchair ramps, and other accessibility
+          modifications.
         </p>
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">
@@ -69,7 +67,7 @@ export default function TermsPage() {
         </h2>
         <p className="mb-4 text-gray-700">
           All content on this site, including text, graphics, logos, and images,
-          is the property of Jay's or its licensors and is protected by
+          is the property of Brothers or its licensors and is protected by
           copyright and trademark laws.
         </p>
 
@@ -77,9 +75,9 @@ export default function TermsPage() {
           6. Limitation of Liability
         </h2>
         <p className="mb-4 text-gray-700">
-          To the fullest extent permitted by law, Jay's and its affiliates shall
-          not be liable for any indirect, incidental, consequential, or punitive
-          damages arising from or related to the use of our services.
+          To the fullest extent permitted by law, Brothers and its affiliates
+          shall not be liable for any indirect, incidental, consequential, or
+          punitive damages arising from or related to the use of our services.
         </p>
 
         <h2 className="text-2xl font-semibold mt-6 mb-2">7. Governing Law</h2>

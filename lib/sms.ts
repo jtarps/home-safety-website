@@ -27,7 +27,7 @@ Your Safe Home Installers booking is CONFIRMED:
 
 We'll call you within 2 hours to confirm details.
 
-Questions? Call 1-800-SAFE-HOME
+Questions? Call (647) 371-0899
 
 Thank you for choosing Safe Home Installers!`
 
@@ -56,7 +56,7 @@ export async function sendBookingReminderSMS(data: SMSData) {
 
 Our certified installer will arrive on time with all equipment. No payment required until job is complete.
 
-Need to reschedule? Call 1-800-SAFE-HOME
+Need to reschedule? Call (647) 371-0899
 
 See you tomorrow! 👷‍♂️`
 

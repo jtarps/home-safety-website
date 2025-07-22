@@ -215,13 +215,13 @@ export default function ContactPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-2xl font-bold text-blue-600 mb-2">
+                    <p className="text-2xl font-bold text-orange-600 mb-2">
                       <Link
-                        href="tel:1-800-GRAB-BARS"
-                        className="hover:underline transition-colors"
-                        aria-label="Call 1-800-GRAB-BARS"
+                        href="tel:+16473710899"
+                        className="hover:underline transition-colors text-3xl font-extrabold text-orange-600"
+                        aria-label="Call (647) 371-0899"
                       >
-                        1-800-GRAB-BARS
+                        (647) 371-0899
                       </Link>
                     </p>
                     <p className="text-gray-600">
@@ -312,15 +312,15 @@ export default function ContactPage() {
             </p>
             <Button
               size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white"
+              className="bg-red-600 hover:bg-red-700 text-white text-2xl font-extrabold px-8 py-4"
             >
               <Link
-                href="tel:1-800-GRAB-BARS"
-                className="flex items-center no-underline text-white"
-                aria-label="Call emergency line 1-800-GRAB-BARS"
+                href="tel:+16473710899"
+                className="flex items-center no-underline text-white text-2xl font-extrabold"
+                aria-label="Call emergency line (647) 371-0899"
               >
                 <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
-                Call Emergency Line: 1-800-GRAB-BARS
+                Call Emergency Line: (647) 371-0899
               </Link>
             </Button>
           </div>

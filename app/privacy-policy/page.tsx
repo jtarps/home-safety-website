@@ -7,11 +7,9 @@ export default function PrivacyPolicyPage() {
       <main className="flex-1 max-w-2xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
 
-        <p className="mb-4 text-gray-700">
-          At Jay's, we respect your privacy and are committed to protecting your
-          personal information. This Privacy Policy explains how we collect,
-          use, disclose, and safeguard your information when you visit our
-          website or use our services.
+        <p className="text-lg text-gray-600 mb-8">
+          At Brothers, we respect your privacy and are committed to protecting
+          your personal information.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">

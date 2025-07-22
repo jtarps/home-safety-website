@@ -35,10 +35,7 @@ export default function SafetyAssessmentsPage() {
                 className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
                 asChild
               >
-                <Link href="tel:1-800-SAFE-HOME">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Now
-                </Link>
+                <Link href="tel:+16473710899">(647) 371-0899</Link>
               </Button>
             </div>
           </div>
@@ -449,10 +446,7 @@ export default function SafetyAssessmentsPage() {
               className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               asChild
             >
-              <Link href="tel:1-800-SAFE-HOME">
-                <Phone className="mr-2 h-5 w-5" />
-                Call 1‑800‑SAFE-HOME
-              </Link>
+              <Link href="tel:+16473710899">(647) 371-0899</Link>
             </Button>
           </div>
         </div>

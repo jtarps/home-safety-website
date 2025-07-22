@@ -14,13 +14,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              About Jay's
+              About Brothers
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              At Jay's, we're on a mission to help you live more safely and
-              independently at home. From grab bars to stairlifts, our certified
-              team delivers fast, flat-rate installations backed by a
-              satisfaction guarantee.
+              At Brothers, we're on a mission to help you live more safely and
+              independently in your home.
             </p>
           </div>
         </div>
@@ -34,10 +32,10 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Our Journey</h2>
                 <p className="text-gray-600 mb-4">
-                  Jay's was born from a passion for helping seniors and families
-                  feel safe at home. Our team brings together years of expertise
-                  in accessibility and home improvement to take the worry out of
-                  safety upgrades.
+                  Brothers was born from a passion for helping seniors and
+                  families feel safe at home. Our team brings together years of
+                  expertise in accessibility and home improvement to take the
+                  worry out of safety upgrades.
                 </p>
                 <p className="text-gray-600">
                   Today, we're proud to be serving the Greater Toronto Area with

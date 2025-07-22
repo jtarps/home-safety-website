@@ -294,9 +294,9 @@ export default function ReviewsPage() {
               className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               asChild
             >
-              <Link href="tel:1-800-SAFE-HOME">
+              <Link href="tel:+16473710899">
                 <Phone className="mr-2 h-5 w-5" />
-                Call 1-800-SAFE-HOME
+                Call (647) 371-0899
               </Link>
             </Button>
           </div>

@@ -37,20 +37,20 @@ export default function BookingPage() {
             >
               <CardContent className="p-6">
                 <div className="text-center mb-6">
-                  <div className="w-24 h-24 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-md bg-white p-2">
+                  <div className="w-24 h-24 rounded-lg flex flex-col items-center justify-center mx-auto mb-2 shadow-md bg-white p-2">
                     <img
-                      src="/logo-main.svg"
-                      alt="Jay's Home Safety Solutions Logo"
-                      className="w-full h-full object-contain"
+                      src="/brotherslogo.svg"
+                      alt="Brothers Home Safety Solutions Logo"
+                      className="h-12 w-auto object-contain mb-2"
                     />
                   </div>
                   <h3
-                    className="font-bold text-lg mb-2"
-                    style={{ color: "#183f64" }}
+                    className="text-xl font-bold mb-2"
+                    style={{ color: "#dd6e18" }}
                   >
-                    Jay's Home Safety Solutions
+                    Brothers Home Safety Solutions
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm mt-1">
                     Professional home safety installations
                   </p>
                 </div>

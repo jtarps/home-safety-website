@@ -3,56 +3,75 @@
 import { Header } from "@/components/header";
 import { PostalCodeChecker } from "@/components/postal-code-checker";
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function ServicesPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
-
   const services = [
     {
-      id: "grab-bar",
-      title: "Grab Bar Install",
-      desc: "Secure one 24\u2033 grab bar in wall studs—perfect for tubs or hallways.",
+      id: "grab-bars",
+      title: "Grab Bars",
+      desc: "Secure support in bathrooms, stairways, hallways, and entryways. Choose from straight, angled, flip-up, or portable styles for every need.",
     },
     {
-      id: "stair-rail",
-      title: "Stair Railing Install",
-      desc: "Install one straight railing (up to 6 ft) for safe, confident steps.",
+      id: "stair-rails",
+      title: "Stair Rails Installation",
+      desc: "Sturdy handrails for safe, confident steps—custom fit for any staircase, indoors or out.",
     },
     {
-      id: "straight-ramp",
-      title: "Straight Ramp Install",
-      desc: "Set modular ramp segments (up to 6 ft) with handrail for easy access.",
+      id: "safety-ramps",
+      title: "Safety Ramps (Interior & Exterior)",
+      desc: "Barrier-free access with portable, modular, or custom-built ramps. OBC-compliant for safety and ease.",
     },
     {
-      id: "rail-kit",
-      title: "Safety Rail Kit Install",
-      desc: "Fit up to 8 ft of deck or porch rail posts + mid-rail—sturdy & code-ready.",
+      id: "bathroom-safety-rails",
+      title: "Bathroom Safety Rails",
+      desc: "Strategically placed rails for safe transfers and stability around tubs, toilets, and showers.",
     },
     {
-      id: "bath-rail",
-      title: "Bathroom Safety Rail Install",
-      desc: "Mount up to 3 rails around tub or toilet for added support.",
+      id: "shower-chair-setup",
+      title: "Shower Chair Setup",
+      desc: "Professional assembly and placement of shower chairs for safe, comfortable bathing.",
     },
     {
-      id: "shower",
-      title: "Hand-Held Shower Install",
-      desc: "Install slide-bar, hose & handheld sprayer—ideal for seated showers.",
+      id: "handheld-shower-head",
+      title: "Handheld Shower Head Installation",
+      desc: "Flexible, easy-to-use shower heads for seated or standing use—improving independence and comfort.",
     },
     {
-      id: "door-opener",
-      title: "Automatic Door Opener Install",
-      desc: "Mount & wire one door operator for touch-free entry.",
+      id: "stairlift-installation",
+      title: "Stairlift (Chair Lift) Installation",
+      desc: "Straight, curved, or outdoor stairlifts for safe, effortless travel up and down stairs.",
     },
     {
-      id: "bath-surround",
-      title: "Bath Surround Install",
-      desc: "Custom acrylic tub surround—no-tear remodel in one visit.",
+      id: "accessible-bathroom-mods",
+      title: "Accessible Bathroom Modifications",
+      desc: "Roll-in showers, walk-in tubs, raised toilets, and more—customized for your needs.",
+    },
+    {
+      id: "automatic-door-opener",
+      title: "Automatic Door Opener Installation",
+      desc: "Touch-free entry for true accessibility. Professional installation for homes and buildings.",
+    },
+    {
+      id: "doorway-widening",
+      title: "Doorway Widening",
+      desc: "Expand doorways for wheelchair and walker access—seamless, code-compliant modifications.",
+    },
+    {
+      id: "threshold-ramps",
+      title: "Threshold Ramps/Reducers",
+      desc: "Eliminate trip hazards at doorways and flooring transitions with custom-fit ramps and reducers.",
+    },
+    {
+      id: "handrails-support-rails",
+      title: "Handrails & Support Rails",
+      desc: "Sturdy handrails and support rails for stairs, hallways, and high-traffic areas—installed to code.",
+    },
+    {
+      id: "flooring-assessment",
+      title: "Flooring Assessment & Modification",
+      desc: "Expert recommendations and installation of non-slip, low-pile flooring for maximum safety.",
     },
   ];
 
@@ -73,11 +92,10 @@ export default function ServicesPage() {
           <section
             key={id}
             id={id}
-            data-aos="fade-up"
-            className="container mx-auto px-4 py-12 mb-8"
+            className="container mx-auto px-4 py-4 mb-2"
           >
             <div
-              className="flex flex-col md:flex-row items-stretch rounded-2xl overflow-hidden shadow-lg"
+              className="flex flex-col md:flex-row items-stretch rounded-2xl overflow-hidden shadow-lg transition-all duration-200 hover:shadow-2xl hover:ring-2 hover:ring-orange-300 hover:scale-[1.02]"
               style={{ backgroundColor: "#183f64" }}
             >
               {/* Text Content */}
@@ -122,8 +140,64 @@ export default function ServicesPage() {
                 style={{ backgroundColor: "#183f64" }}
               >
                 <img
-                  src="/placeholder.jpg"
-                  alt="Service placeholder"
+                  src={
+                    id === "grab-bars"
+                      ? "/grabbarinstall.png"
+                      : id === "stair-rails"
+                      ? "/stairrailings.png"
+                      : id === "safety-ramps"
+                      ? "/safetyramps.png"
+                      : id === "bathroom-safety-rails"
+                      ? "/bathroomsafety.png"
+                      : id === "shower-chair-setup"
+                      ? "/showerchair.png"
+                      : id === "handheld-shower-head"
+                      ? "/handheldshower.png"
+                      : id === "stairlift-installation"
+                      ? "/stairlift.png"
+                      : id === "accessible-bathroom-mods"
+                      ? "/accessiblebathroom.png"
+                      : id === "automatic-door-opener"
+                      ? "/automaticdoor.png"
+                      : id === "doorway-widening"
+                      ? "/doorwaywidening.png"
+                      : id === "threshold-ramps"
+                      ? "/thresholdramps.png"
+                      : id === "handrails-support-rails"
+                      ? "/handrails.png"
+                      : id === "flooring-assessment"
+                      ? "/flooringassessment.png"
+                      : "/placeholder.jpg"
+                  }
+                  alt={
+                    id === "grab-bars"
+                      ? "Professional grab bar installation"
+                      : id === "stair-rails"
+                      ? "Professional stair railing installation"
+                      : id === "safety-ramps"
+                      ? "Professional safety ramp installation"
+                      : id === "bathroom-safety-rails"
+                      ? "Professional bathroom safety rail installation"
+                      : id === "shower-chair-setup"
+                      ? "Professional shower chair setup"
+                      : id === "handheld-shower-head"
+                      ? "Professional handheld shower head installation"
+                      : id === "stairlift-installation"
+                      ? "Professional stairlift installation"
+                      : id === "accessible-bathroom-mods"
+                      ? "Professional accessible bathroom modification"
+                      : id === "automatic-door-opener"
+                      ? "Professional automatic door opener installation"
+                      : id === "doorway-widening"
+                      ? "Professional doorway widening"
+                      : id === "threshold-ramps"
+                      ? "Professional threshold ramp installation"
+                      : id === "handrails-support-rails"
+                      ? "Professional handrails and support rails installation"
+                      : id === "flooring-assessment"
+                      ? "Professional flooring assessment and modification"
+                      : "Service placeholder"
+                  }
                   className="object-cover w-full h-64 md:h-full"
                 />
               </div>
