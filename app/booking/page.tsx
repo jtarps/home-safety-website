@@ -1,10 +1,24 @@
 "use client";
 
+import { Suspense } from "react";
 import { Header } from "@/components/header";
 import { MultiStepBooking } from "@/components/multi-step-booking";
 import { TrustIndicators } from "@/components/trust-indicators";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Award } from "lucide-react";
+
+// Loading component for the Suspense boundary
+function BookingFormSkeleton() {
+  return (
+    <div className="animate-pulse">
+      <div className="h-8 bg-gray-200 rounded mb-4"></div>
+      <div className="h-4 bg-gray-200 rounded mb-2"></div>
+      <div className="h-4 bg-gray-200 rounded mb-6"></div>
+      <div className="h-12 bg-gray-200 rounded mb-4"></div>
+      <div className="h-12 bg-gray-200 rounded"></div>
+    </div>
+  );
+}
 
 export default function BookingPage() {
   return (
@@ -26,7 +40,9 @@ export default function BookingPage() {
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
-            <MultiStepBooking />
+            <Suspense fallback={<BookingFormSkeleton />}>
+              <MultiStepBooking />
+            </Suspense>
           </div>
 
           <div className="space-y-6">
