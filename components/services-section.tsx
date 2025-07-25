@@ -28,7 +28,7 @@ const services = [
   },
   {
     id: "stair-rails",
-    title: "Stair Rails Installation",
+    title: "Stair Rails",
     description:
       "Sturdy handrails for safe, confident steps—custom fit for any staircase, indoors or out.",
   },
@@ -37,24 +37,6 @@ const services = [
     title: "Safety Ramps (Interior & Exterior)",
     description:
       "Barrier-free access with portable, modular, or custom-built ramps. OBC-compliant for safety and ease.",
-  },
-  {
-    id: "bathroom-safety-rails",
-    title: "Bathroom Safety Rails",
-    description:
-      "Strategically placed rails for safe transfers and stability around tubs, toilets, and showers.",
-  },
-  {
-    id: "shower-chair-setup",
-    title: "Shower Chair Setup",
-    description:
-      "Professional assembly and placement of shower chairs for safe, comfortable bathing.",
-  },
-  {
-    id: "handheld-shower-head",
-    title: "Handheld Shower Head Installation",
-    description:
-      "Flexible, easy-to-use shower heads for seated or standing use—improving independence and comfort.",
   },
   {
     id: "stairlift-installation",
@@ -73,6 +55,24 @@ const services = [
     title: "Automatic Door Opener Installation",
     description:
       "Touch-free entry for true accessibility. Professional installation for homes and buildings.",
+  },
+  {
+    id: "bathroom-safety-rails",
+    title: "Bathroom Safety Rails",
+    description:
+      "Strategically placed rails for safe transfers and stability around tubs, toilets, and showers.",
+  },
+  {
+    id: "shower-chair-setup",
+    title: "Shower Chair Setup",
+    description:
+      "Professional assembly and placement of shower chairs for safe, comfortable bathing.",
+  },
+  {
+    id: "handheld-shower-head",
+    title: "Handheld Shower Head Installation",
+    description:
+      "Flexible, easy-to-use shower heads for seated or standing use—improving independence and comfort.",
   },
   {
     id: "doorway-widening",
@@ -100,7 +100,7 @@ const services = [
   },
 ];
 
-export function ServicesSection() {
+ export function ServicesSection() {
   const [expanded, setExpanded] = useState<string | null>(null);
   return (
     <section id="services" className="py-12 lg:py-20 bg-white">
